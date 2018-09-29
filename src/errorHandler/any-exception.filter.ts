@@ -6,7 +6,6 @@ export class AnyExceptionFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest();
-    console.log('exception', exception);
 
     response.status(exception.getStatus()).json({
       statusCode: exception.getStatus(),

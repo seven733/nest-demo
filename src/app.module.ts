@@ -7,15 +7,20 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { UsersModule } from 'users/user.module';
 import { TodosModule } from 'todos/todo.module';
+import { OrdersModule } from 'orders/order.module';
 
 import { UserController } from 'users/user.controller';
 import { TodoController } from 'todos/todo.controller';
+
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
     UsersModule,
     TodosModule,
+    OrdersModule,
     MongooseModule.forRoot('mongodb://localhost:27017/demo-nest'),
+    TypeOrmModule.forRoot(),
   ],
   providers: [
     {
